@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "CommonDefines.h"
 
-typedef void (^Completion)(id data , NSError * error);
-typedef void (^Progress)(NSInteger downloadLength, NSInteger expectedLength);
 
 @interface DownloadOperation : NSOperation
 

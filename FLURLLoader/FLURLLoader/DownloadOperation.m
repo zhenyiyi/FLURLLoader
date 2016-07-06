@@ -22,18 +22,18 @@
 
 @property (nonatomic, strong) NSURLConnection *connection;
 
-@property (nonatomic, readwrite, getter=isCancelled) BOOL cancelled;
+
 @property (nonatomic, readwrite, getter=isExecuting) BOOL executing;
 @property (nonatomic, readwrite, getter=isFinished) BOOL finished;
-@property (nonatomic, readwrite, getter=isConcurrent) BOOL concurrent;
+
 @end
 
 @implementation DownloadOperation
 
-@synthesize cancelled = _cancelled;
+
 @synthesize executing = _executing;
 @synthesize finished = _finished;
-@synthesize concurrent = _concurrent;
+
 
 
 #pragma mark -- life sytle
@@ -113,11 +113,9 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     [_buffer appendData:data];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.progress) {
-            self.progress(_buffer.length , _expectedContentLength);
-        }
-    });
+    if (self.progress) {
+        self.progress(_buffer.length , _expectedContentLength);
+    }
 }
 
 - (nullable NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse{
@@ -126,24 +124,19 @@
 
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection{
+    if (self.complete) {
+        self.complete(self.buffer,nil);
+    }
     [self done];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.complete) {
-            self.complete(self.buffer,nil);
-        }
-    });
-    
 }
 
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    
+    if (self.complete) {
+        self.complete(nil,error);
+    }
     [self done];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.complete) {
-            self.complete(nil,error);
-        }
-    });
 }
 
 @end

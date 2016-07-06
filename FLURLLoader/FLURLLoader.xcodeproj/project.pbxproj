@@ -14,6 +14,8 @@
 		512567471D2CAD8300CD08C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 512567461D2CAD8300CD08C8 /* Assets.xcassets */; };
 		5125674A1D2CAD8300CD08C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 512567481D2CAD8300CD08C8 /* LaunchScreen.storyboard */; };
 		512567531D2CAE1000CD08C8 /* DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 512567521D2CAE1000CD08C8 /* DownloadOperation.m */; };
+		512567561D2CCB4E00CD08C8 /* FLDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 512567551D2CCB4E00CD08C8 /* FLDownloadOperation.m */; };
+		512567591D2CCB8800CD08C8 /* CommonDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = 512567581D2CCB8800CD08C8 /* CommonDefines.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		5125674B1D2CAD8300CD08C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		512567511D2CAE1000CD08C8 /* DownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadOperation.h; sourceTree = "<group>"; };
 		512567521D2CAE1000CD08C8 /* DownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadOperation.m; sourceTree = "<group>"; };
+		512567541D2CCB4E00CD08C8 /* FLDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLDownloadOperation.h; sourceTree = "<group>"; };
+		512567551D2CCB4E00CD08C8 /* FLDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLDownloadOperation.m; sourceTree = "<group>"; };
+		512567571D2CCB8800CD08C8 /* CommonDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefines.h; sourceTree = "<group>"; };
+		512567581D2CCB8800CD08C8 /* CommonDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonDefines.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,10 @@
 		512567391D2CAD8300CD08C8 /* FLURLLoader */ = {
 			isa = PBXGroup;
 			children = (
+				512567571D2CCB8800CD08C8 /* CommonDefines.h */,
+				512567581D2CCB8800CD08C8 /* CommonDefines.m */,
+				512567541D2CCB4E00CD08C8 /* FLDownloadOperation.h */,
+				512567551D2CCB4E00CD08C8 /* FLDownloadOperation.m */,
 				512567511D2CAE1000CD08C8 /* DownloadOperation.h */,
 				512567521D2CAE1000CD08C8 /* DownloadOperation.m */,
 				5125673D1D2CAD8300CD08C8 /* AppDelegate.h */,
@@ -156,6 +166,8 @@
 			files = (
 				512567421D2CAD8300CD08C8 /* ViewController.m in Sources */,
 				5125673F1D2CAD8300CD08C8 /* AppDelegate.m in Sources */,
+				512567561D2CCB4E00CD08C8 /* FLDownloadOperation.m in Sources */,
+				512567591D2CCB8800CD08C8 /* CommonDefines.m in Sources */,
 				5125673C1D2CAD8300CD08C8 /* main.m in Sources */,
 				512567531D2CAE1000CD08C8 /* DownloadOperation.m in Sources */,
 			);
